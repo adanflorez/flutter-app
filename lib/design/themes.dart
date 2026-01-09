@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+import 'package:hello_world/design/colors.dart';
+
+class CustomTheme {
+  CustomTheme._();
+
+  static ThemeData main = ThemeData(
+      fontFamily: 'RobotoMono',
+      primaryColor: CustomColors.brandPrimaryColor,
+      textTheme: const TextTheme(
+        displayLarge: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold),
+        displayMedium: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+        displaySmall: TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal),
+        headlineLarge:
+            TextStyle(fontSize: 21.0, color: CustomColors.brandPrimaryColor),
+        bodyLarge: TextStyle(fontSize: 14.0),
+        bodyMedium: TextStyle(fontSize: 13.0),
+        bodySmall: TextStyle(fontSize: 10.0),
+      ));
+}
