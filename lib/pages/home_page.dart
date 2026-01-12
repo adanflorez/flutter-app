@@ -15,15 +15,16 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-              bottomRight: CustomRadius.sm, bottomLeft: CustomRadius.sm),
+              bottomRight: CustomRadius.xs, bottomLeft: CustomRadius.xs),
         ),
-        toolbarHeight: 97.0,
+        toolbarHeight: 85.0,
         backgroundColor: CustomColors.brandLightColor,
         title: const HomAppBarTitle(),
       ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
+        transform: Matrix4.translationValues(0.0, -12.0, 0.0),
         decoration: const BoxDecoration(
           color: CustomColors.brandPrimaryColor,
         ),

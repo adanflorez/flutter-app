@@ -4,5 +4,5 @@ class CustomRadius {
   CustomRadius._();
 
   static const Radius xs = Radius.circular(12);
-  static const Radius sm = Radius.circular(32);
+  static const Radius sm = Radius.circular(24);
 }
