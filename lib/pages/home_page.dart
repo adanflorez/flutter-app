@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/design/colors.dart';
 import 'package:hello_world/design/radius.dart';
+import 'package:hello_world/widgets/button_icon_widget.dart';
 import 'package:hello_world/widgets/home_app_bar_widget.dart';
 import 'package:hello_world/widgets/number_formatter_widget.dart';
+import 'package:hello_world/widgets/summary_card_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -25,11 +27,21 @@ class HomePage extends StatelessWidget {
         decoration: const BoxDecoration(
           color: CustomColors.brandPrimaryColor,
         ),
-        child: const Column(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
           children: [
-            SummaryCardTemporal(
+            SummaryCard(
+              amount: 150000,
               typeSummaryCard: TypeSummaryCard.incomes,
-              title: "Incomes",
+              title: "Ingresos",
+              action: () => print("Ingresos pressed"),
+            ),
+            const SizedBox(height: 8.0),
+            SummaryCard(
+              amount: 50000,
+              typeSummaryCard: TypeSummaryCard.spending,
+              title: "Gastos",
+              action: () => print("Gastos pressed"),
             ),
           ],
         ),
@@ -39,68 +51,3 @@ class HomePage extends StatelessWidget {
 }
 
 enum TypeSummaryCard { incomes, spending }
-
-class SummaryCardTemporal extends StatelessWidget {
-  final TypeSummaryCard typeSummaryCard;
-  final String title;
-
-  const SummaryCardTemporal(
-      {super.key, required this.typeSummaryCard, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    Icon incomesIcon =
-        const Icon(Icons.arrow_upward, color: CustomColors.brandOnSuccessColor);
-    Icon spendingIcon =
-        const Icon(Icons.arrow_downward, color: CustomColors.brandOnErrorColor);
-
-    return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        height: 92,
-        decoration: const BoxDecoration(
-          shape: BoxShape.rectangle,
-          color: CustomColors.brandLightColorOpacity,
-          borderRadius: BorderRadius.all(CustomRadius.xs),
-        ),
-        child: Row(
-          children: [
-            Container(
-              height: 40,
-              width: 40,
-              margin: const EdgeInsets.only(right: 8.0),
-              decoration: const BoxDecoration(
-                color: CustomColors.brandLightColor,
-                borderRadius: BorderRadius.all(CustomRadius.xs),
-              ),
-              child: typeSummaryCard == TypeSummaryCard.incomes
-                  ? incomesIcon
-                  : spendingIcon,
-            ),
-            Expanded(
-                child: Text(
-              title,
-              style: Theme.of(context).textTheme.bodyLarge,
-            )),
-            Container(
-              margin: const EdgeInsets.only(right: 16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  NumberFormatter(
-                    amount: 122222.34,
-                    amountStyle: Theme.of(context).textTheme.displayMedium,
-                    amountSmallStyle: Theme.of(context).textTheme.displaySmall,
-                  ),
-                  const Text("From January 1 to January 31",
-                      style: TextStyle(
-                          color: CustomColors.brandLightColor,
-                          fontFamily: 'RobotoMono',
-                          fontSize: 10.0)),
-                ],
-              ),
-            )
-          ],
-        ));
-  }
-}

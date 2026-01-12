@@ -4,7 +4,10 @@ import 'package:hello_world/design/colors.dart';
 class ButtonIcon extends StatelessWidget {
   final IconButton iconButton;
   final EdgeInsets? margin;
-  const ButtonIcon({super.key, required this.iconButton, this.margin});
+  final Color? borderColor;
+  
+  const ButtonIcon(
+      {super.key, required this.iconButton, this.margin, this.borderColor});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class ButtonIcon extends StatelessWidget {
       margin: margin,
       decoration: BoxDecoration(
         border: Border.all(
-          color: CustomColors.brandLightColorBorder,
+          color: borderColor ?? CustomColors.brandLightColorBorder,
         ),
         borderRadius: BorderRadius.circular(12.0),
       ),
