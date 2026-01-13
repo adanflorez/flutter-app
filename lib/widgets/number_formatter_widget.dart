@@ -5,12 +5,14 @@ class NumberFormatter extends StatelessWidget {
   final double amount;
   final TextStyle? amountStyle;
   final TextStyle? amountSmallStyle;
+  final EdgeInsets? padding;
 
   const NumberFormatter(
       {super.key,
       required this.amount,
       required this.amountStyle,
-      required this.amountSmallStyle});
+      required this.amountSmallStyle,
+      this.padding});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class NumberFormatter extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: const EdgeInsets.only(top: 2.0, right: 5.0),
+          padding: padding ?? const EdgeInsets.only(top: 2.0, right: 5.0),
           child: Text(
             '\$',
             style: amountSmallStyle,

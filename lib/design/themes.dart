@@ -8,12 +8,22 @@ class CustomTheme {
       fontFamily: 'RobotoMono',
       primaryColor: CustomColors.brandPrimaryColor,
       textTheme: const TextTheme(
-        displayLarge: TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold),
-        displayMedium: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: CustomColors.brandLightColor),
-        displaySmall: TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal, color: CustomColors.brandLightColor),
+        displayLarge: TextStyle(
+            fontSize: 48.0,
+            fontWeight: FontWeight.bold,
+            color: CustomColors.brandLightColor),
+        displayMedium: TextStyle(
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+            color: CustomColors.brandLightColor),
+        displaySmall: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.normal,
+            color: CustomColors.brandLightColor),
         headlineLarge:
             TextStyle(fontSize: 21.0, color: CustomColors.brandPrimaryColor),
-        bodyLarge: TextStyle(fontSize: 14.0, color: CustomColors.brandLightColor),
+        bodyLarge:
+            TextStyle(fontSize: 14.0, color: CustomColors.brandLightColor),
         bodyMedium: TextStyle(fontSize: 13.0),
         bodySmall: TextStyle(fontSize: 10.0),
       ));
