@@ -5,7 +5,6 @@ import 'package:hello_world/widgets/home/bottom_body_widget.dart';
 import 'package:hello_world/widgets/home/mid_body_widget.dart';
 import 'package:hello_world/widgets/home/top_body_widget.dart';
 import 'package:hello_world/widgets/home_app_bar_widget.dart';
-import 'package:hello_world/widgets/number_formatter_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

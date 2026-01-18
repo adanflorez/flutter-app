@@ -15,7 +15,11 @@ class BottomBodyWidget extends StatelessWidget {
       child: ListView(
         children: [
           TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  'new-page',
+                );
+              },
               style: TextButton.styleFrom(
                 alignment: Alignment.centerRight,
               ),
