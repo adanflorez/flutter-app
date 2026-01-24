@@ -11,6 +11,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formLoginKey = GlobalKey<FormState>();
+  late String userName;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +37,20 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       TextFormField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return "Por favor ingresar usuario";
-                          }
-                          if(value.length >= 7){
-                            return "Por favor ingresa un usuario valido";
-                          }
-                          return null;
-                        },
-                        decoration: const InputDecoration(
-                          labelText: CustomCopys.userInputLabel,
-                        ),
-                      ),
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Por favor ingresar usuario";
+                            }
+                            if (value.length >= 7) {
+                              return "Por favor ingresa un usuario valido";
+                            }
+                            userName = value;
+                            return null;
+                          },
+                          decoration: const InputDecoration(
+                            labelText: CustomCopys.userInputLabel,
+                          ),
+                          style: const TextStyle()),
                       const SizedBox(height: 16),
                       TextFormField(
                         decoration: const InputDecoration(
@@ -56,11 +58,15 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         obscureText: true,
                       ),
-                      ElevatedButton(onPressed: () {
-                        if(_formLoginKey.currentState!.validate()) {
-                          Navigator.of(context).pushReplacementNamed(AppRoutes.home);
-                        }
-                      }, child: const Text("Subir formulario"))
+                      ElevatedButton(
+                          onPressed: () {
+                            if (_formLoginKey.currentState!.validate()) {
+                              Navigator.of(context).pushReplacementNamed(
+                                  AppRoutes.home,
+                                  arguments: userName);
+                            }
+                          },
+                          child: const Text("Subir formulario"))
                     ],
                   )),
             ],

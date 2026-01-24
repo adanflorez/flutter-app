@@ -3,7 +3,8 @@ import 'package:hello_world/design/colors.dart';
 import 'package:hello_world/widgets/button_icon_widget.dart';
 
 class HomAppBarTitle extends StatelessWidget {
-  const HomAppBarTitle({super.key});
+  final String storeName;
+  const HomAppBarTitle({super.key, required this.storeName});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class HomAppBarTitle extends StatelessWidget {
           ),
           Expanded(
             child: Text(
-              "Store Name",
+              storeName,
               style: Theme.of(context).textTheme.headlineLarge,
             ),
           ),

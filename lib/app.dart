@@ -31,8 +31,11 @@ class MainApp extends StatelessWidget {
                 builder: (context) => OtherPage(user: user),
               );
             case AppRoutes.home:
+              final storeName = settings.arguments as String;
               return MaterialPageRoute(
-                builder: (context) => const HomePage(),
+                builder: (context) => HomePage(
+                  storeName: storeName,
+                ),
               );
             default:
               return MaterialPageRoute(

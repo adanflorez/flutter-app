@@ -7,7 +7,8 @@ import 'package:hello_world/widgets/home/top_body_widget.dart';
 import 'package:hello_world/widgets/home_app_bar_widget.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final String storeName;
+  const HomePage({super.key, required this.storeName});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,9 @@ class HomePage extends StatelessWidget {
         ),
         toolbarHeight: 85.0,
         backgroundColor: CustomColors.brandLightColor,
-        title: const HomAppBarTitle(),
+        title: HomAppBarTitle(
+          storeName: storeName,
+        ),
       ),
       body: const Column(
         children: [TopBodyWidget(), MidBodyWidget(), BottomBodyWidget()],
@@ -28,7 +31,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
 
 enum TypeSummaryCard { incomes, spending }
