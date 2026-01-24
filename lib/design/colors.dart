@@ -10,7 +10,7 @@ class CustomColors {
   static const Color brandLightColorOpacity =
       Color.fromRGBO(255, 255, 255, 0.2);
   static const Color brandDarkColor = Colors.black;
-  static const Color brandLigthDarkColor = Color.fromRGBO(113, 113, 112, 1);
+  static const Color brandLightDarkColor = Color.fromRGBO(113, 113, 112, 1);
   static const Color brandDarkColorOpacity = Color.fromRGBO(255, 255, 255, 0.2);
   static const Color brandErrorColor = Color.fromRGBO(249, 56, 57, 0.2);
   static const Color brandOnErrorColor = Color.fromRGBO(249, 56, 57, 1);

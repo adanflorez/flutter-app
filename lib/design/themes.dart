@@ -22,6 +22,14 @@ class CustomTheme {
             color: CustomColors.brandLightColor),
         headlineLarge:
             TextStyle(fontSize: 21.0, color: CustomColors.brandPrimaryColor),
+        labelLarge: TextStyle(
+            fontSize: 30.0,
+            fontWeight: FontWeight.bold,
+            color: CustomColors.brandPrimaryColor),
+        labelMedium: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.w400,
+            color: CustomColors.brandLightDarkColor),
         bodyLarge:
             TextStyle(fontSize: 14.0, color: CustomColors.brandLightColor),
         bodyMedium: TextStyle(fontSize: 13.0),

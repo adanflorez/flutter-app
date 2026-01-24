@@ -3,6 +3,7 @@ import 'package:hello_world/config/app_routes.dart';
 import 'package:hello_world/design/themes.dart';
 import 'package:hello_world/models/user.dart';
 import 'package:hello_world/pages/home_page.dart';
+import 'package:hello_world/pages/login_page.dart';
 import 'package:hello_world/pages/new_page.dart';
 import 'package:hello_world/pages/other_page.dart';
 
@@ -30,9 +31,12 @@ class MainApp extends StatelessWidget {
                 builder: (context) => OtherPage(user: user),
               );
             case AppRoutes.home:
-            default:
               return MaterialPageRoute(
                 builder: (context) => const HomePage(),
+              );
+            default:
+              return MaterialPageRoute(
+                builder: (context) => const LoginPage(),
               );
           }
         });
