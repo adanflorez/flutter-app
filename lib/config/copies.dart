@@ -14,3 +14,11 @@ class CustomCopys {
   static const String notAMember = 'Not a member?';
   static const String registerNow = 'Register Now';
 }
+
+class CustomErrors {
+  CustomErrors._();
+
+  static const String userError = 'Please enter a username';
+  static const String invalidUserError = 'Please enter a valid username';
+  static const String passwordError = 'Please enter a password';
+}

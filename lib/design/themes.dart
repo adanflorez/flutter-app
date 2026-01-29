@@ -18,7 +18,7 @@ class CustomTheme {
             color: CustomColors.brandLightColor),
         displaySmall: TextStyle(
             fontSize: 16.0,
-            fontWeight: FontWeight.normal,
+            fontWeight: FontWeight.bold,
             color: CustomColors.brandLightColor),
         headlineLarge:
             TextStyle(fontSize: 21.0, color: CustomColors.brandPrimaryColor),
@@ -30,6 +30,10 @@ class CustomTheme {
             fontSize: 20.0,
             fontWeight: FontWeight.w400,
             color: CustomColors.brandLightDarkColor),
+        labelSmall: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+            color: CustomColors.brandDarkColor),
         bodyLarge:
             TextStyle(fontSize: 14.0, color: CustomColors.brandLightColor),
         bodyMedium: TextStyle(fontSize: 13.0),
